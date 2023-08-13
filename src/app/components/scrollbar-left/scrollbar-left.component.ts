@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./scrollbar-left.component.scss']
 })
 export class ScrollbarLeftComponent {
-
+  constructor(){};
 }
