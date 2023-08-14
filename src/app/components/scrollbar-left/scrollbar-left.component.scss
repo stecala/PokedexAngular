@@ -1,0 +1,14 @@
+#sidebar{
+  max-width: 13vw;
+  padding: 20px;
+  max-height: 100vh;
+  overflow: hidden;
+  .btn-container{
+    text-align: center;
+    height: 2vh;
+  }
+  #list-container{
+    height: 96vh;
+    overflow-y: scroll;
+  }
+}
