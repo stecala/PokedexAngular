@@ -14,6 +14,7 @@ export class ScrollbarLeftComponent {
   nameList: any = [];
   pokemonList : any = [];
   pokemons : any = [];
+  areArived : boolean = false;
 
   constructor(private http: HttpProxyService){
     Promise.resolve().then(()=>{
@@ -24,7 +25,7 @@ export class ScrollbarLeftComponent {
       //console.error(this.nameList);
       this.PokemonsFunction(this.nameList);
     }).then(()=>{
-
+      this.areArived = true;
     }).catch((err) => {
       console.error(err);
     })
@@ -38,7 +39,9 @@ export class ScrollbarLeftComponent {
         return this.http.singlePokemonGet(element.url)
       }).then((res) =>{
         this.pokemons.push(res);
-        console.log(element.name)
+        return this.pokemons;
+      }).then(()=>{
+        this.pokemons.sort((a: { id: number; }, b: { id: number; }) => a.id - b.id)
         return this.pokemons;
       })
     }); 
