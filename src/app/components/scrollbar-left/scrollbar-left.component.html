@@ -1,15 +1,8 @@
 <div id="sidebar">
-  <div class="btn-container" [hidden]="isFirstCall">
-    <button>Previous</button>
-  </div>
   <div id="list-container">
     <ul>
-      <li *ngFor="let pokemon of nameImg" class="d-flex align-items-center space-between">
+      <li *ngFor="let pokemon of nameList" class="d-flex align-items-center space-between">
         <div id="name-container">{{pokemon.name}}</div>
-        <div id="img-container-sidebar"><img src="{{pokemon.img}}" alt="{{pokemon.name}} sprite"></div>
-      </li>
-      <li class="btn-container" style="margin-bottom: 20px;">
-        <button>See more</button>
       </li>
     </ul>
   </div>
