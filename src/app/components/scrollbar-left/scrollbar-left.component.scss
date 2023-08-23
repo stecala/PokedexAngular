@@ -1,14 +1,10 @@
 #sidebar{
-  min-width: 25vw;
-  padding: 20px;
   max-height: 100vh;
   overflow: hidden;
-  .btn-container{
-    text-align: center;
-    height: 2vh;
-  }
+  height: 100vh;
   #list-container{
-    height: 96vh;
+    padding: 20px;
+    height: 100%;
     overflow-y: scroll;
   }
 }

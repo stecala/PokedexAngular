@@ -26,9 +26,9 @@ export class HttpProxyService {
     })
   }
 
-  public singlePokemonGet(name: string){
+  public singlePokemonGet(urlSingle: string){
     return new Promise<any>((resolve, reject) =>{
-      lastValueFrom(this.httpClient.get(this.url+'pokemon/'+name, {})).then((res) => {
+      lastValueFrom(this.httpClient.get(urlSingle, {})).then((res) => {
         //console.log(res)
         return resolve(res);
       }).catch((err) => {

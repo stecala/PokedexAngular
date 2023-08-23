@@ -13,8 +13,7 @@ export class ScrollbarLeftComponent {
   list: any = {};
   nameList: any = [];
   pokemonList : any = [];
-  pokemon : any = [];
-  i : number = 0; 
+  pokemons : any = [];
 
   constructor(private http: HttpProxyService){
     Promise.resolve().then(()=>{
@@ -23,14 +22,25 @@ export class ScrollbarLeftComponent {
     }).then(()=>{
       this.nameList = this.list.__zone_symbol__value.results;
       //console.error(this.nameList);
-      this.nameList.forEach((element: { name: string; }) => {
-        return this.http.singlePokemonGet(element.name);
-      });
+      this.PokemonsFunction(this.nameList);
     }).then(()=>{
-    
+
     }).catch((err) => {
       console.error(err);
     })
 
+  }
+
+
+  PokemonsFunction(arr : []){
+    arr.forEach((element : any) => {
+      Promise.resolve().then(()=>{
+        return this.http.singlePokemonGet(element.url)
+      }).then((res) =>{
+        this.pokemons.push(res);
+        console.log(element.name)
+        return this.pokemons;
+      })
+    }); 
   }
 }

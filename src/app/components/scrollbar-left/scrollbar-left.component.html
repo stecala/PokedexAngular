@@ -1,8 +1,9 @@
 <div id="sidebar">
   <div id="list-container">
     <ul>
-      <li *ngFor="let pokemon of nameList" class="d-flex align-items-center space-between">
+      <li *ngFor="let pokemon of pokemons" class="d-flex align-items-center space-between">
         <div id="name-container">{{pokemon.name}}</div>
+        <div class="sprite-container"><img src="{{pokemon.sprites.front_default}}" alt="{{pokemon.name}} sprite"></div>
       </li>
     </ul>
   </div>
