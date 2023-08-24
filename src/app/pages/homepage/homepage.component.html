@@ -1,4 +1,6 @@
 <div class="d-flex" id="homepage">
-  <app-scrollbar-left></app-scrollbar-left>
-  <app-main-content></app-main-content>
+  <app-scrollbar-left (sendPokemonEvent)="storePokemon($event)"></app-scrollbar-left>
+  <div class="main-content d-flex" *ngIf="isClicked">
+    <img src="{{ pokemon.sprites.other['official-artwork'].front_default }}" alt="artwork ufficiale del pokemon {{ pokemon.name }}">
+  </div>
 </div>

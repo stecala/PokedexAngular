@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpProxyService } from 'src/app/services/http-proxy.service';
-import { lastValueFrom } from 'rxjs';
-
+import { Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-scrollbar-left',
   templateUrl: './scrollbar-left.component.html',
@@ -45,5 +44,11 @@ export class ScrollbarLeftComponent {
         return this.pokemons;
       })
     }); 
+  }
+
+  @Output() sendPokemonEvent = new EventEmitter<any>();
+
+  sendPokemon(element : any) : void {
+    this.sendPokemonEvent.emit(element);
   }
 }
